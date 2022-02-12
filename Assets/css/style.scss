@@ -1,6 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+// index------------------------------------------------------------------------
+
+$z-fixed: 100;
 
 // variable-------------------------------
 
@@ -13,16 +16,32 @@ $text-color: hsl($hue-color,8%,45%);
 
 $body-color: hsl($hue-color,28%,12%);
 
+$first-color:hsl($hue-color, 69%,61%);
+$first-color-second:hsl($hue-color, 69%,61%);
+$first-color-alt:hsl($hue-color,57%,53%);
+$lighter:hsl($hue-color, 92%,85%);
+
+
+
+
+
+
 // fonts ---------------------------------------------
 $normal-font-size:0.938;
 $body-font: 'Poppins', sans-serif;
 $title-color: hsl($hue-color,8%,95%);
 $font-semi-bold: 600 ;
+$font-medium:500;
+$small-font-size:0.875rem;
 
 // Margin -------------------------------
-
+$mb-1-5: 1.5rem;
+$mb-2-5: 2.5rem;
 
 // base -----------------------------------------------------------------------
+
+
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -58,6 +77,95 @@ html{
             max-width: 100%;
             height: auto;
         }
+
+        // header
+        
+        .container{
+            max-width: 768px;
+            margin-left: $mb-1-5;
+            margin-right: $mb-1-5;
+        }
+
+        .grid{      
+            display: grid;
+            gap: 1.5rem;
+
+        }
+
+        .header{
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background-color: $body-color;
+            z-index: $z-fixed;
+        }
+
+        // nav-----------------------------------------------------------------------
+
+        .nav{
+            max-width: 968px;
+            height: $header-height;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+
+            .nav_logo, .nav_toggle{
+                color: $title-color;
+                font-weight: 500;
+            }
+
+            .nav_logo:hover{
+                color: $first-color;
+
+            }
+
+            .nav_toggle{
+                font-size: 1.1rem;
+                cursor: pointer;
+            }
+
+            .nav_toggle:hover{
+
+                color: $first-color;
+            }
+
+            @media screen and (max-width:767px){ 
+                .nav_menu{
+                    position: fixed;
+                    bottom: -100%;
+                    left: 0;
+                    width: 100%;
+                    background-color: $body-color;
+                    padding: 2rem 1.5rem 4rem;
+                    box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
+                    border-radius: 1.5rem 1.5rem 0 0;
+                    transition: 0.3s;
+                }
+                
+            }
+
+            .nav_list{
+                grid-template-columns: repeat(3,1fr );
+                gap: 2rem;
+
+
+                .nav_link{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-size: $small-font-size;
+                    color: $title-color;
+                    font-weight: $font-medium;
+                }
+
+                .nav_link:hover{
+                    color: $first-color;
+                }
+            }
+        }
+
     }
 }
 
