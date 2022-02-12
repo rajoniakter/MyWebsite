@@ -1,0 +1,63 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+// variable-------------------------------
+
+$header-height:3rem;
+
+// color------------------------------------
+$hue-color: 250;
+
+$text-color: hsl($hue-color,8%,45%);
+
+$body-color: hsl($hue-color,28%,12%);
+
+// fonts ---------------------------------------------
+$normal-font-size:0.938;
+$body-font: 'Poppins', sans-serif;
+$title-color: hsl($hue-color,8%,95%);
+$font-semi-bold: 600 ;
+
+// Margin -------------------------------
+
+
+// base -----------------------------------------------------------------------
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+
+    body{
+        color: $text-color;
+        font-size: $normal-font-size;
+        margin: 0 0 $header-height 0;
+        font-family: $body-font;
+        background-color: $body-color;
+
+        h1,h2,h3,h4,h5 {
+            color: $title-color;
+            font-weight: $font-semi-bold;
+
+
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
